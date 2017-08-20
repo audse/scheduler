@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<br />
+<h2><span class="orange-bg">Add Employee</span></h2>
+<br />
+
+<form action="{% url 'add_worker' %}" method="post">
+{% csrf_token %}
+Add Employee
+<input type="text" name="name" placeholder="Name..." />
+
+<br /><br />
+<select name="availability[]" multiple>
+{% for shift in shifts %}
+	<option value="{{ shift.pk }}">
+		{{ shift.day }} @ {{ shift.start_time }} {% if shift.start_pm %}p.m.{% else %}a.m.{% endif %} - {{ shift.end_time }} {% if shift.end_pm %}p.m.{% else %}a.m.{% endif %}
+	</option>
+{% endfor %}
+</select>
+
+<br /><br />
+Preferred Hours
+<select name="hours">
+	<option value="part">Part-time</option>
+	<option value="full">Full-time</option>
+</select>
+
+<br /><br />
+<button type="submit">Add Employee</button>
+</form>
+
+{% endblock %}

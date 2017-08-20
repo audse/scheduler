@@ -1,0 +1,218 @@
+<h2><span class="orange-bg">Current Schedule</span></h2>
+<br />
+{% if scheduled_workers != 0 %}
+<table>
+	<tr>
+		<th></th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+	</tr>
+	<tr>
+		<th class="right">
+			Early AM
+		</th>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Monday" %}
+				{% if shift.shift.start_time == 5 %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</t>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Tuesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time = 5 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Wednesday" %}
+				{% if shift.worker.preferred_hurs == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 5 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Thursday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 5 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Friday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 5 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+	</tr>
+	<tr>
+		<th class="right">
+			AM
+		</th>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Monday" %}
+				{% if shift.shift.start_time == 9 %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</t>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Tuesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time = 9 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Wednesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 9 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Thursday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 9 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Friday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 9 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+	</tr>
+	<tr>
+		<th class="right">
+			PM
+		</th>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Monday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 13 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Tuesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 13 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Wednesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 13 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Thursday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 13 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Friday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 13 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+	</tr>
+	<tr>
+		<th class="right">
+			Late PM
+		</th>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Monday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 17 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Tuesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 17 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Wednesday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 17 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Thursday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 17 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}</td>
+		<td>
+		{% for shift in scheduled_shifts %}
+			{% if shift.shift.day == "Friday" %}
+				{% if shift.worker.preferred_hours == 40 %}<b class="red">{% else %}<b class="blue">{% endif %}{% if shift.shift.start_time == 17 %}
+				{{ shift.worker.name }}</b><br />
+				{% endif %}
+			{% endif %}
+		{% endfor %}</td>
+	</tr>
+</table>
+<a href="{% url 'delete_schedule' %}"><button>Delete Schedule</button></a>
+{% else %}
+	<p>No schedule found.</p>
+	<a href="{% url 'generate_schedule' %}"><button>Generate Schedule</button>
+{% endif %}

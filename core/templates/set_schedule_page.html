@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br />
+<h2><span class="orange-bg">Adjust Schedule</span></h2>
+<br />
+<table>
+	<tr>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+	</tr>
+	<tr>
+		<td>
+			{% for shift in shifts %}
+				{% if shift.day == "Monday" %}
+					<a class="red" href="{% url 'delete_shift' pk=shift.pk %}">{{ shift.start_time }} {% if shift.start_pm %}p.m.{% else %}a.m.{% endif %} - {{ shift.end_time }} {% if shift.end_pm %}p.m.{% else %}a.m.{% endif %}</a><br />
+				{% endif %}
+			{% endfor %}
+			<br /><form action="{% url 'add_shift' %}" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="day" value="Monday" />
+				Start:
+				<select name="start_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}" {% if forloop.counter == 9 %} selected{% endif %}>{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" >{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+
+				<br />
+				End:
+				<select name="end_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}">{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" {% if forloop.counter == 1 %} selected{% endif %}>{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				<input type="checkbox" name="full_time_shift" /> Full Time?<br />
+				<input type="text" name="part_time_workers" style="width:20px;" value="1" /> Part time Workers <br />
+				<button type="submit">Add Shift</button>
+			</form>
+		</td>
+		<td>
+			{% for shift in shifts %}
+				{% if shift.day == "Tuesday" %}
+					<a class="red" href="{% url 'delete_shift' pk=shift.pk %}">{{ shift.start_time }} {% if shift.start_pm %}p.m.{% else %}a.m.{% endif %} - {{ shift.end_time }} {% if shift.end_pm %}p.m.{% else %}a.m.{% endif %}</a><br />
+				{% endif %}
+			{% endfor %}
+			<br /><form action="{% url 'add_shift' %}" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="day" value="Tuesday" />
+				Start:
+				<select name="start_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}" {% if forloop.counter == 9 %} selected{% endif %}>{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" >{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				End:
+				<select name="end_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}">{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" {% if forloop.counter == 1 %} selected{% endif %}>{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				<input type="checkbox" name="full_time_shift" /> Full Time?<br />
+				<input type="text" name="part_time_workers" style="width:20px;" value="1" /> Part time Workers <br />
+				<button type="submit">Add Shift</button>
+			</form>
+		</td>
+		<td>
+			{% for shift in shifts %}
+				{% if shift.day == "Wednesday" %}
+					<a class="red" href="{% url 'delete_shift' pk=shift.pk %}">{{ shift.start_time }} {% if shift.start_pm %}p.m.{% else %}a.m.{% endif %} - {{ shift.end_time }} {% if shift.end_pm %}p.m.{% else %}a.m.{% endif %}</a><br />
+				{% endif %}
+			{% endfor %}
+			<br /><form action="{% url 'add_shift' %}" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="day" value="Wednesday" />
+				Start:
+				<select name="start_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}" {% if forloop.counter == 9 %} selected{% endif %}>{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" >{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select> 
+				<br />
+				End:
+				<select name="end_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}">{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" {% if forloop.counter == 1 %} selected{% endif %}>{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				<input type="checkbox" name="full_time_shift" /> Full Time?<br />
+				<input type="text" name="part_time_workers" style="width:20px;" value="1" /> Part time Workers <br />
+				<button type="submit">Add Shift</button>
+			</form>
+		</td>
+		<td>
+			{% for shift in shifts %}
+				{% if shift.day == "Thursday" %}
+					<a class="red" href="{% url 'delete_shift' pk=shift.pk %}">{{ shift.start_time }} {% if shift.start_pm %}p.m.{% else %}a.m.{% endif %} - {{ shift.end_time }} {% if shift.end_pm %}p.m.{% else %}a.m.{% endif %}</a><br />
+				{% endif %}
+			{% endfor %}
+			<br /><form action="{% url 'add_shift' %}" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="day" value="Thursday" />
+				Start:
+				<select name="start_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}" {% if forloop.counter == 9 %} selected{% endif %}>{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" >{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				End:
+				<select name="end_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}">{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" {% if forloop.counter == 1 %} selected{% endif %}>{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				<input type="checkbox" name="full_time_shift" /> Full Time?<br />
+				<input type="text" name="part_time_workers" style="width:20px;" value="1" /> Part time Workers <br />
+				<button type="submit">Add Shift</button>
+			</form>
+		</td>
+		<td>
+			{% for shift in shifts %}
+				{% if shift.day == "Friday" %}
+					<a class="red" href="{% url 'delete_shift' pk=shift.pk %}">{{ shift.start_time }} {% if shift.start_pm %}p.m.{% else %}a.m.{% endif %} - {{ shift.end_time }} {% if shift.end_pm %}p.m.{% else %}a.m.{% endif %}</a><br />
+				{% endif %}
+			{% endfor %}
+			<br /><form action="{% url 'add_shift' %}" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="day" value="Friday" />
+				Start:
+				<select name="start_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}" {% if forloop.counter == 9 %} selected{% endif %}>{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" >{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				End:
+				<select name="end_time">
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter }}">{{ forloop.counter }} a.m.</option>
+					{% endfor %}
+					{% for i in "xxxxxxxxxxxx" %}
+					<option value="{{ forloop.counter|add:'12' }}" {% if forloop.counter == 1 %} selected{% endif %}>{{ forloop.counter }} p.m.</option>
+					{% endfor %}
+				</select>
+				<br />
+				<input type="checkbox" name="full_time_shift" /> Full Time?<br />
+				<input type="text" name="part_time_workers" style="width:20px;" value="1" /> Part time Workers <br />
+				<button type="submit">Add Shift</button>
+			</form>
+		</td>
+	</tr>
+</table>
+
+
+{% endblock %}
+
+

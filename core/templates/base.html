@@ -1,0 +1,155 @@
+{% load get_workers %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Scheduler</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+<style>
+
+	body, html {
+		color: #333;
+		font-family: 'Open Sans', sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	table th {
+		background: #16a085;
+		color: #fff;
+		font-weight: 400;
+		padding: 10px;
+	}
+
+	table td {
+		padding: 10px;
+		text-align: center;
+	}
+
+	button {
+		background: #f39c12;
+		border: 1px solid #e67e22;
+		border-radius: 7px;
+		color: white;
+		font-size: 1em;
+		padding: 15px;
+		width: 100%;
+	} button:hover {
+		background: #e67e22;
+	}
+
+	h2 {
+		margin: 0;
+		padding: 0;
+	}
+
+	#head {
+		background: #ddd;
+		padding: 10px;
+	}
+
+	#nav {
+		background: #1abc9c;
+	}
+
+	#nav a {
+		color: white;
+		display: inline-block;
+		padding: 10px 30px;
+	} #nav a:hover {
+		background: #16a085;
+	}
+
+	#left {
+		flex-shrink: 1;
+		padding: 10px;
+	}
+
+	#content {
+		flex-grow: 1;
+		padding: 5px 10px 10px 10px;
+	}
+
+	.right {
+		text-align: right;
+	}
+
+	.gray {
+		color: #ccc;
+		text-align: center;
+	}
+
+	.orange-bg {
+		background: #f39c12;
+		color: white;
+		padding: 10px;
+	}
+
+	.gray-bg {
+		background: #eee;
+		color: black;
+		padding: 5px;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+
+	b.blue {
+		color: red;
+		font-weight: 600;
+	}
+
+	b.red {
+		color: black;
+		font-weight: 600;
+	}
+	
+	a.red {
+		color: black;
+	}
+
+	a.red:hover {
+		color: red;
+	}
+
+	a.red:hover:before {
+		content: "×"
+	}
+
+</style>
+
+</head>
+<body>
+
+<div id="nav">
+	<a href="{% url 'home_page' %}">Home</a>
+	<a href="{% url 'set_schedule_page' %}">Adjust Schedule</a>
+	<a href="{% url 'add_worker_page' %}">Add Employee</a>
+	<a href="{% url 'admin:index' %}">Admin</a>
+</div>
+
+<div style="display: flex;">
+
+	<div id="left">
+		<h3><span class="orange-bg">Employees</span></h3>
+		{% for worker in 1|get_workers %}
+			<div class="gray-bg">{{ worker.name }}</div>
+		{% endfor %}
+	</div>
+
+	<div id="content">
+		{% block content %}{% endblock %}
+	</div>
+
+</div>
+
+</body>
+</html>
